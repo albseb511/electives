@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .circle{
+            width: 100px;
+            height: 100px;
+            background: red;
+            padding: 10px;
+            margin: 100px;
+            border: 2px solid black;
+            animation: circle-animation 1s linear infinite 0s;
+            /* animation: name duration timing-function infinite delay; */
+        }
+        @keyframes circle-animation {
+            from {
+                border-radius: 0px;
+            }
+            to {
+                border-radius: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circle">
+        b
+    </div>
+</body>
+</html>

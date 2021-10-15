@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Slide in</title>
+    <style>
+        .ball{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: olive;
+            margin: auto;
+            text-align: center;
+            border: 2px solid black;
+        }
+        .slide-in-left{
+            animation: slide-in 3s linear;
+        }
+        @keyframes slide-in {
+            /* 0% */
+            from {
+                transform: translateX(-500px) 
+                rotate(-1800deg);
+            }
+            50%{
+                transform: translateX(200px) 
+                rotate(360deg);
+            }
+            /* 100% */
+            to {
+                transform: translateX(0px) 
+                rotate(0deg);
+            }
+        }
+        .appear{
+            /* we add forwards to ensure that the property remains after animation */
+            animation: appear-animation 1s linear 3s forwards;
+            opacity: 0;
+        }
+        @keyframes appear-animation {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ball">
+    </div>
+    <hr/>
+    <div class="ball slide-in-left">
+        a
+    </div>
+    <hr/>
+    <div class="ball slide-in-left">
+        a
+        <div class="appear">
+            b
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+
+
+        
+
+        .one{
+            animation: loading 2s linear infinite 0.4s;
+            /* animation: name duration timing-function iteration-count delay; */
+        }
+        
+        .two{
+            animation: loading 2s linear infinite 0.8s;
+        }
+
+        .three{
+            animation: loading 2s linear infinite 1.2s;
+        }
+
+        .four{
+            animation: loading 2s linear infinite 1.6s;
+        }
+
+        .five{
+            animation: loading 2s linear infinite 2s;
+        }
+        @keyframes loading {
+            from{
+                /* completely visible */
+                opacity: 1;
+            }
+            to{
+                /* no visibility */
+                opacity: 0;
+            }
+        }
+        .row{
+            margin: 100px;
+            /* row with 8px gap */
+            display: flex;
+            gap: 8px;
+        }
+        .dot{
+            width: 50px;
+            height: 50px;
+            background: grey;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="dot"></div>
+    </div>
+    <div class="row">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="row">
+        <div class="dot one"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="row">
+        <div class="dot"></div>
+        <div class="dot two"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="row">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot three"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="row">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot four"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="row">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot five"></div>
+    </div>
+    <div class="row">
+        <div class="dot one"></div>
+        <div class="dot two"></div>
+        <div class="dot three"></div>
+        <div class="dot four"></div>
+        <div class="dot five"></div>
+    </div>
+</body>
+</html>

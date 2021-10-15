@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Planet</title>
+    <style>
+        body{
+            /* full view port height */
+            height: 100vh;
+            /* full width */
+            width: 100%;
+            /* position absolute */
+            position: absolute;
+        }
+
+        .sun{
+            width: 100px;
+            height: 100px;
+            background: orange;
+            border-radius: 50%;
+            /* left, top*/
+            position: absolute;
+            /* 50% is center minus the radius of the planet or sun */
+            left: calc(50% - 100px/2);
+            top: calc(50% - 100px/2);
+        }
+
+        .mercury{
+            width: 50px;
+            height: 50px;
+            background: grey;
+            border-radius: 50%;
+            /* left, top*/
+            position: absolute;
+            left: calc(50% - 50px/2);
+            top: calc(50% - 50px/2);
+            animation: mercury 2s linear infinite;
+        }
+
+        @keyframes mercury {
+            from{
+                transform: rotate(0) translateX(120px);
+            }
+            to{
+                transform: rotate(360deg) translateX(120px);
+
+            }
+        }
+
+        .venus{
+
+        }
+
+        .earth{
+
+        }
+
+        .mars{
+
+        }
+
+        .jupiter{
+
+        }
+
+        .saturn{
+
+        }
+
+        .uranus{
+
+        }
+
+        .neptune{
+
+        }
+    </style>
+</head>
+<body>
+    <div class="sun">
+    </div>
+    <div class="mercury">
+        m
+    </div>
+</body>
+</html>
