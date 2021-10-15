@@ -1,0 +1,57 @@
+body{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+.sun{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    position: absolute;
+    top: calc(50% - 100px/2);
+    left: calc(50% - 100px/2);
+    /* spaces matter */;
+    animation: sun 1s;
+}
+
+.mercury{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    position: absolute;
+    top: calc(50% - 50px/2);
+    left: calc(50% - 50px/2);
+    animation: mercury 1s linear infinite;
+    /* spaces matter */
+}
+
+
+@keyframes sun {
+    from{
+        transform: rotate(0deg) translate(0px);
+    }
+    to{
+        transform: rotate(360deg) translate(0px);
+    }
+}
+
+@keyframes mercury {
+    from{
+        transform: rotate(0deg) translate(100px);
+    }
+    to{
+        transform: rotate(360deg) translate(100px);
+    }
+}
+
+@keyframes earth {
+    from{
+        transform: rotate(0deg) translate(0px);
+    }
+    to{
+        transform: rotate(0deg) translate(0px);
+    }
+}

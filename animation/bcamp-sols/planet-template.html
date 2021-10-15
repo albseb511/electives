@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+        /* dont change body, we are defining it for full width and height */
+        body{
+            /* full view port height */
+            height: 100vh;
+            /* full width */
+            width: 100%;
+            /* position absolute */
+            position: absolute;
+        }
+
+        .sun{
+            border-radius: sun_radius;
+            width: sun_width;
+            height: sun_height;
+            background-color: sun_color;
+            position: absolute;
+            /* 50% is center minus the radius of the planet or sun */
+            top: calc(50% - 100px/2);
+            left: calc(50% - 100px/2);
+            /* spaces matter, so please be careful */;
+            animation: sun 1s;
+        }
+
+        .mercury{
+            border-radius: fill_in_radius;
+            width: fill_in_width;
+            height: fill_in_height;
+            background-color: mercury_color;
+            /* dont change position, use top and left to work with this */
+            position: absolute;
+            top: calc(insert_correct_vale);
+            left: calc(insert_correct_vale);
+            animation: mercury 1s linear infinite;
+            /* spaces matter */
+        }
+
+        @keyframes mercury {
+            from{
+                /* use this order, rotate and then translateX */
+                transform: rotate(value) translateX(value);
+            }
+            to{
+                transform: rotate(value) translateX(value);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="planet sun"></div>
+    <div class="planet mercury"></div>
+    <div class="planet venus"></div>
+    <div class="planet earth"></div>
+    <div class="planet mars"></div>
+    <div class="planet jupiter"></div>
+    <div class="planet saturn"></div>
+    <div class="planet uranus"></div>
+    <div class="planet neptune"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #messages{
+            height: 20rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="messages">
+
+    </div>
+    <div id="user-box">
+        <input type="text" id="name" placeholder="username"/>
+        <button id="username-btn">SET USERNAME</button>
+    </div>
+    <div>
+        <input type="text" id="message" placeholder="type something"/>
+        <button disabled id="submit">POST</button>
+        <div id="username">User: N/A</div>
+    </div>
+    
+<body>
+    <script type="text/javascript">
+        const ws = new WebSocket("ws://localhost:8080");
+        let user = null;
+
+        ws.onopen = function(event){
+            console.log(`connected`,event)
+        }
+
+        ws.onmessage = async function (event) {
+            try{
+                // * Event.data is Blob
+                const text = await event.data.text();
+                const data = JSON.parse(text);
+                receiveMessage(data)
+            }
+            catch(err){
+                console.log(err)
+            }
+        };
+
+        function sendMessage(){
+            if(!user){
+                console.log('oops')
+                return
+            }
+            const message = document.getElementById("message").value;
+            const payload = {
+                username: user,
+                message: message,
+            }
+            if(ws.OPEN){
+                ws.send(JSON.stringify(payload))
+            }
+            else{
+                alert("connection lost or not established")
+            }
+        }
+
+        function receiveMessage({message, username}){
+            const messages = document.getElementById("messages")
+            const msgEl = document.createElement("div");
+            msgEl.textContent = `${message} - ${username}`;
+            messages.append(msgEl);
+        }
+
+        window.onload = function(){
+            const submit = document.getElementById("submit");
+            submit.addEventListener("click",sendMessage)
+
+            const usernameBtn = document.getElementById("username-btn");
+            usernameBtn.addEventListener("click",setUsername)
+        }
+
+        function setUsername(){
+            const name = document.getElementById("name").value;
+            user = name;
+            if(!name){
+                alert("please enter a name");
+                return
+            }
+            const submit = document.getElementById("submit");
+            const userbox = document.getElementById("user-box");
+            submit.disabled = false;
+            userbox.style.visibility = "hidden";
+            const username = document.getElementById("username");
+            console.log(name)
+            username.textContent = `User: ${name}`
+        }
+    </script>
+</body>
+</html>
